@@ -33,6 +33,7 @@ public class BusinessOperation {
 						String fileslist[]=files.split("\\\\");
 						System.out.println(fileslist[fileslist.length-1]);
 					}
+					application_terminate =true;
 					break;
 				
 				case(2):
@@ -50,14 +51,14 @@ public class BusinessOperation {
 						System.out.println("You have entered create mode");
 						System.out.print("Enter the file name: ");
 						filename =path+sc.next();
-						File fc = new File(filename);
-						
+						File fc = new File(filename);					
 						try {
 							res = fc.createNewFile();
-						} 
-						catch (IOException e) {
-							e.printStackTrace();
+						} catch (IOException e) {
+		
+							//e.printStackTrace();
 						}
+						
 						if(res) {
 							System.out.println("file created");
 						}
@@ -101,17 +102,13 @@ public class BusinessOperation {
 					case(4):
 						System.out.println("Returning back to main menu");
 						break;
-					default:
-						System.out.println("Invalid input");
-						System.out.printf("You have entered %d\n",selection);
-						System.out.println("Application terminated");
 					
 			
 				}
 					break;
 				case(3):
 					application_terminate=true;
-					System.out.println("Application terminated");
+					//System.out.println("Application terminated");
 					
 				sc.close();
 			

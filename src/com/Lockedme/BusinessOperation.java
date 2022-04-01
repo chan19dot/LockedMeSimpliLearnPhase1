@@ -88,8 +88,6 @@ public class BusinessOperation {
 						File desiredFile = new File(filename);
 						
 						for (File f: farray) {
-							//System.out.println(filename);
-							//System.out.println(f);
 							if (f.equals(desiredFile)) {
 								res= true;
 								break;
@@ -116,28 +114,8 @@ public class BusinessOperation {
 					System.out.println("Application terminated");
 					
 				sc.close();
-			//}
+			
 		}
-	
-		//case 1 option to add a user specified file by using create
-		
-		
-		
-		
-		
-		//case 2 option to  delete a user specified file
-		
-		
-		
-		//case 3 option to search for a file 
-		
-		
-		//case 4 to close the application
-		
-		
-		//default to close the application
-		
-		
 
 	}
 

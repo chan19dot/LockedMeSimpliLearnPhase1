@@ -14,24 +14,29 @@ public class BusinessOperation {
 		boolean res=false;
 		boolean application_terminate = false;
 		Scanner sc = new Scanner(System.in);
-		
+		String result="";
 		while(!application_terminate) {
 			int choice;
-			System.out.println("******************************************************************************************");
-			System.out.println("**ApplicationName:LockedMe Digital Services \t Developer Name: Srichandan Yerragudi   **");	
-			System.out.println("**press 1 to display the files already present in the directory\t\t\t\t**");
-			System.out.println("**press 2 to enter File operation mode\t\t\t\t\t\t\t**");
-			System.out.println("**press 3 to exit the application\t\t\t\t\t\t\t**");
-			System.out.println("******************************************************************************************");
+			System.out.println("**************************************************************************************************");
+			System.out.println("**ApplicationName:LockedMe.com APP \t Developer Details: Developed by Srichandan Yerragudi   **");	
+			System.out.println("**press 1 to display the files already present in the directory\t\t\t\t\t**");
+			System.out.println("**press 2 to Business level operations mode\t\t\t\t\t\t\t**");
+			System.out.println("**press 3 to exit the application\t\t\t\t\t\t\t\t**");
+			System.out.println("**************************************************************************************************");
 			choice = sc.nextInt();
 			switch(choice){
 				case(1):
 					File rerun = new File(path);
 					File fl[] = rerun.listFiles();
-					for(File r:fl) {
-						String files=r+"";
-						String fileslist[]=files.split("\\\\");
-						System.out.println(fileslist[fileslist.length-1]);
+					if (fl.length==0) {
+						System.out.println();
+					}
+					else {
+						for(File r:fl) {
+							String files=r+"";
+							String fileslist[]=files.split("\\\\");
+							System.out.println(fileslist[fileslist.length-1]);
+						}
 					}
 					application_terminate =true;
 					break;
@@ -65,6 +70,7 @@ public class BusinessOperation {
 						else {
 							System.out.println("file couldn't be created");
 						}
+						application_terminate=true;
 						break;
 					case(2):
 						System.out.println("You have entered delete mode");
@@ -79,7 +85,8 @@ public class BusinessOperation {
 						else {
 							System.out.println("file couldn't be deleted");
 						}
-							break;
+						application_terminate=true;
+						break;
 					case(3):
 						System.out.println("You have entered search mode");
 						System.out.print("Enter the file name: ");
@@ -91,13 +98,16 @@ public class BusinessOperation {
 						for (File f: farray) {
 							if (f.equals(desiredFile)) {
 								res= true;
+								result="file found";
 								break;
 							}
 							else {
 								res= false;
+								result="file not found";
 							}
 						}
-						System.out.println(res);
+						System.out.println(result);
+						application_terminate=true;
 						break;
 					case(4):
 						System.out.println("Returning back to main menu");
@@ -105,6 +115,7 @@ public class BusinessOperation {
 					
 			
 				}
+					
 					break;
 				case(3):
 					application_terminate=true;

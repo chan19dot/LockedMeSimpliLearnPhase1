@@ -15,14 +15,16 @@ public class BusinessOperation {
 		boolean application_terminate = false;
 		Scanner sc = new Scanner(System.in);
 		String result="";
+		System.out.println("**************************************************************************************************");
+		System.out.println("**ApplicationName:LockedMe.com APP \t Developer Details: Developed by Srichandan Yerragudi   **");
+		System.out.println("**************************************************************************************************");
 		while(!application_terminate) {
 			int choice;
-			System.out.println("**************************************************************************************************");
-			System.out.println("**ApplicationName:LockedMe.com APP \t Developer Details: Developed by Srichandan Yerragudi   **");	
-			System.out.println("**press 1 to display the files already present in the directory\t\t\t\t\t**");
-			System.out.println("**press 2 to Business level operations mode\t\t\t\t\t\t\t**");
-			System.out.println("**press 3 to exit the application\t\t\t\t\t\t\t\t**");
-			System.out.println("**************************************************************************************************");
+			
+			System.out.println("press 1 to display the files already present in the directory");
+			System.out.println("press 2 to Business level operations mode");
+			System.out.println("press 3 to exit the application");
+			
 			choice = sc.nextInt();
 			switch(choice){
 				case(1):
@@ -83,7 +85,7 @@ public class BusinessOperation {
 							System.out.println("file deleted");
 						}
 						else {
-							System.out.println("file couldn't be deleted");
+							System.out.println("file not found");
 						}
 						application_terminate=true;
 						break;
